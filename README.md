@@ -1,3 +1,8 @@
+dependencies used:
+npm i @reduxjs/toolkit react-redux react-router-dom dayjs classnam
+es antd-mobile axios
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,3 +1,6 @@
+* Bilibili 黑马 react 小 project
+* 链接: https://www.bilibili.com/video/BV1ZB4y1Z7o8?p=60&spm_id_from=pageDriver&vd_source=2079bd5007b55a4a80052601af41e5e3
+
 dependencies used:
 npm i @reduxjs/toolkit react-redux react-router-dom dayjs classnam
 es antd-mobile axios

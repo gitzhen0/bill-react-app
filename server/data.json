@@ -97,6 +97,13 @@
       "date": "2023-12-10T02:08:21.601Z",
       "useFor": "bonus",
       "id": 21
+    },
+    {
+      "type": "pay",
+      "money": -110,
+      "date": "2023-12-06T05:00:00.000Z",
+      "useFor": "dessert",
+      "id": 22
     }
   ]
 }

@@ -1,6 +1,6 @@
 import { NavBar, DatePicker } from 'antd-mobile'
 import './index.scss'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import { useSelector } from 'react-redux'
@@ -40,6 +40,16 @@ const Month = () => {
     }
 
   }, [currentMonthList])
+
+  useEffect(() => {
+    const nowDate = dayjs().format('YYYY-MM')
+    if (monthGroup[nowDate]) {
+      setMonthList(monthGroup[nowDate])
+    }
+
+  }, [monthGroup])
+
+
 
   const onConfirm = (date) => {
     setDateVisible(false)
@@ -88,6 +98,7 @@ const Month = () => {
             onConfirm={onConfirm}
             onClose={() => setDateVisible(false)}
             max={new Date()}
+
           />
         </div>
       </div>

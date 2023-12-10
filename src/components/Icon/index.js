@@ -11,5 +11,5 @@ const Icon = ({ type }) => {
   )
 }
 
-// export default Icon
+export default Icon
 export { Icon }

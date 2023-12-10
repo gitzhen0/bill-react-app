@@ -1,15 +1,10 @@
 import classNames from 'classnames'
 import './index.scss'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { billTypeToName } from '@/contents'
 const DailyBill = ({ date, billList }) => {
 
-  // console.log(billList)
-
   const dayResult = useMemo(() => {
-
-    // const pay = currentMonthList.filter(item => item.type === 'pay').reduce((a, c) => a + c.money, 0)
-    // const income = currentMonthList.filter(item => item.type === 'income').reduce((a, c) => a + c.money, 0)
 
     const pay = billList === undefined ? 0 : billList.filter(item => item.type === 'pay').reduce((a, c) => a + c.money, 0)
     const income = billList === undefined ? 0 : billList.filter(item => item.type === 'income').reduce((a, c) => a + c.money, 0)
@@ -22,13 +17,16 @@ const DailyBill = ({ date, billList }) => {
     }
 
   }, [billList])
-  // console.log("asdfasdfa" + date)
+
+  const [visible, setVisible] = useState(false)
+
+
   return (
     <div className={classNames('dailyBill')}>
       <div className="header">
         <div className="dateIcon">
           <span className="date">{date}</span>
-          <span className={classNames('arrow')}></span>
+          <span className={classNames('arrow', visible && 'expand')} onClick={() => setVisible(!visible)} ></span>
         </div>
         <div className="oneLineOverview">
           <div className="pay">
@@ -47,7 +45,7 @@ const DailyBill = ({ date, billList }) => {
 
       </div>
       {/* 单日列表 */}
-      <div className="billList">
+      <div className="billList" style={{ display: visible ? 'block' : 'none' }}>
         {billList.map(item => {
           return (
             <div className="bill" key={item.id}>

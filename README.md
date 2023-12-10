@@ -1,4 +1,4 @@
-* Bilibili 黑马 react 小 project
+* Bilibili 黑马 react 小记账本 project
 * 链接: https://www.bilibili.com/video/BV1ZB4y1Z7o8?p=60&spm_id_from=pageDriver&vd_source=2079bd5007b55a4a80052601af41e5e3
 
 dependencies used:
